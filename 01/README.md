@@ -806,5 +806,297 @@ class Counter {
         System.out.println("Count: " + count);
     }
 }
-``` 
+```
+3. Static Variable in Employee Class
+
+```java
+class Employee {
+    static String companyName = "TechCorp";
+    String name;
+
+    Employee(String name) {
+        this.name = name;
+    }
+
+    void display() {
+        System.out.println("Employee: " + name + ", Company: " + companyName);
+    }
+}
+```
+4. Static Variable for Unique ID Generation
+
+```java
+class User {
+    static int idCounter = 1000;
+    int userId;
+
+    User() {
+        userId = ++idCounter;
+    }
+
+    void display() {
+        System.out.println("User ID: " + userId);
+    }
+}
+```
+
+5. Static Constants
+
+```java
+class Constants {
+    static final double PI = 3.14159;
+}
+```
+
+6. Static Variable for Shared Resource
+
+```java
+class Database {
+    static String dbName = "CustomerDB";
+}
+```
+7. Static Variable for Application Configuration
+
+```java
+class Config {
+    static String appName = "BankingApp";
+    static String version = "1.0.0";
+}
+```
+
+8. Static Variable in School Class
+
+```java
+class School {
+    static String schoolName = "Greenwood High";
+    String studentName;
+
+    School(String studentName) {
+        this.studentName = studentName;
+    }
+
+    void display() {
+        System.out.println("Student: " + studentName + ", School: " + schoolName);
+    }
+}
+```
+
+9. Static Variable in Software License
+
+```java
+
+class Software {
+    static int licenseKey = 12345678;
+}
+```
+
+10. Static Variable for AI Chatbot
+
+```java
+class Chatbot {
+    static String botName = "AI Assistant";
+}
+```
+
+Here are 10 real-time examples of static variables in Java, demonstrating their practical use in real-world applications.
+
+1. Employee Management System (Static Company Name)
+
+```java
+class Employee {
+    static String companyName = "TechCorp"; // Shared among all employees
+    String name;
+    int id;
+
+    public Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    void display() {
+        System.out.println("Employee: " + name + ", ID: " + id + ", Company: " + companyName);
+    }
+}
+
+public class EmployeeDemo {
+    public static void main(String[] args) {
+
+	Employee e1 = new Employee("John Doe", 101);
+        Employee e2 = new Employee("Alice Brown", 102);
+
+        e1.display();
+        e2.display();
+    }
+}
+```
+
+Output:
+
+```text
+Employee: John Doe, ID: 101, Company: TechCorp
+Employee: Alice Brown, ID: 102, Company: TechCorp
+```
+
+2. Library System (Static Book Count)
+
+```java
+class Library {
+    static int totalBooks = 0; // Shared among all books
+    String bookTitle;
+
+    public Library(String bookTitle) {
+        this.bookTitle = bookTitle;
+        totalBooks++;
+    }
+
+    static void displayTotalBooks() {
+        System.out.println("Total Books in Library: " + totalBooks);
+    }
+}
+
+public class LibraryDemo {
+    public static void main(String[] args) {
+
+	Library book1 = new Library("Java Programming");
+        Library book2 = new Library("Python for Beginners");
+
+        Library.displayTotalBooks();
+    }
+}
+```
+Output:
+
+```text
+Total Books in Library: 2
+```
+
+3. Banking System (Static Interest Rate)
+
+```java
+class BankAccount {
+    static double interestRate = 3.5; // Shared interest rate for all accounts
+    String accountHolder;
+    double balance;
+
+    public BankAccount(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    void display() {
+        System.out.println("Account Holder: " + accountHolder + ", Balance: $" + balance + ", Interest Rate: " + interestRate + "%");
+    }
+}
+
+public class BankingDemo {
+    public static void main(String[] args) {
+        BankAccount acc1 = new BankAccount("Alice", 5000);
+        BankAccount acc2 = new BankAccount("Bob", 8000);
+
+        acc1.display();
+        acc2.display();
+    }
+}
+```
+Output:
+
+```text
+Account Holder: Alice, Balance: $5000.0, Interest Rate: 3.5%
+Account Holder: Bob, Balance: $8000.0, Interest Rate: 3.5%
+```
+
+4. Online Shopping Cart (Static Discount)
+
+
+```java
+class Product {
+    static double discount = 10.0; // Shared discount for all products
+    String name;
+    double price;
+
+    public Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    void display() {
+        double finalPrice = price - (price * discount / 100);
+        System.out.println("Product: " + name + ", Price after discount: $" + finalPrice);
+    }
+}
+
+public class ShoppingCartDemo {
+    public static void main(String[] args) {
+        Product p1 = new Product("Laptop", 1200);
+        Product p2 = new Product("Phone", 800);
+
+        p1.display();
+        p2.display();
+    }
+}
+```
+
+Output:
+
+```text
+Product: Laptop, Price after discount: $1080.0
+Product: Phone, Price after discount: $720.0
+```
+
+
+5. Movie Ticket Booking System (Static Seat Count)
+
+```java
+class MovieTicket {
+    static int totalSeats = 100; // Shared total seat count
+    String movieName;
+
+    public MovieTicket(String movieName) {
+        this.movieName = movieName;
+    }
+
+    void bookTicket(int seats) {
+        if (seats <= totalSeats) {
+            totalSeats -= seats;
+            System.out.println(seats + " tickets booked for " + movieName);
+        } else {
+            System.out.println("Not enough seats available.");
+        }
+    }
+
+    static void displayAvailableSeats() {
+        System.out.println("Available seats: " + totalSeats);
+    }
+}
+
+public class MovieDemo {
+    public static void main(String[] args) {
+        MovieTicket m1 = new MovieTicket("Avengers");
+        m1.bookTicket(10);
+        MovieTicket.displayAvailableSeats();
+    }
+}
+```
+
+Output:
+
+```text
+10 tickets booked for Avengers
+Available seats: 90
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
