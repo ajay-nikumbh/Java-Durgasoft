@@ -3,7 +3,7 @@
 - Instance variables in Java are variables that belong to an instance of a class and are declared inside a class but outside any method, constructor, or block.
 - They have different values for different objects of the class.
 
-Example 01: 
+Example 01: Here are 30 examples of Java classes demonstrating instance variables
 
 ```java
 // Example 1: Basic instance variable
@@ -202,7 +202,7 @@ class Watch {
 }
 ```
 
-Example 02:
+Example 02: Full Program: Using Instance Variables
 
 ```java
 // Class 1: Person
@@ -262,7 +262,15 @@ public class InstanceVariableExample {
 }
 ```
 
-Example 03:
+Output:
+
+```text
+Name: John Doe, Age: 28
+Car Brand: Toyota, Model: Camry, Year: 2022
+Account Holder: Alice, Balance: $5000.75
+```
+
+Example 03: Program: Using Constructors with Instance Variables
 
 ```java
 // Class 1: Person
@@ -340,8 +348,22 @@ public class InstanceVariableWithConstructor {
         acc2.display();
     }
 }
+
 ```
-Example 04:
+Output:
+
+```text
+
+Name: John Doe, Age: 28
+Name: Emma Watson, Age: 25
+Car Brand: Toyota, Model: Camry, Year: 2022
+Car Brand: Honda, Model: Civic, Year: 2021
+Account Holder: Alice, Balance: $5000.75
+Account Holder: Bob, Balance: $12000.5
+
+```
+
+Example 04: Program: Using Getters and Setters with Instance Variables
 
 ```java
 
@@ -498,5 +520,13 @@ public class InstanceVariableEncapsulation {
         acc1.display();
     }
 }
+```
+
+Output:
+
+```text
+Name: John Doe, Age: 30
+Car Brand: Toyota, Model: Camry, Year: 2023
+Account Holder: Alice, Balance: $4500.5
 ```
 
