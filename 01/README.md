@@ -530,3 +530,228 @@ Car Brand: Toyota, Model: Camry, Year: 2023
 Account Holder: Alice, Balance: $4500.5
 ```
 
+- Here are 10 real-time examples of Java classes using instance variables with proper encapsulation, constructors, and methods.
+
+1. Employee Management System
+
+```java
+class Employee {
+    private String name;
+    private int id;
+    private double salary;
+
+    // Constructor
+    public Employee(String name, int id, double salary) {
+        this.name = name;
+        this.id = id;
+        this.salary = salary;
+    }
+
+    // Getter Methods
+    public String getName() { return name; }
+    public int getId() { return id; }
+    public double getSalary() { return salary; }
+
+    // Setter Method
+    public void setSalary(double salary) {
+        if (salary > 0) {
+            this.salary = salary;
+        } else {
+            System.out.println("Invalid salary amount.");
+        }
+    }
+
+    public void display() {
+        System.out.println("Employee Name: " + name + ", ID: " + id + ", Salary: $" + salary);
+    }
+}
+
+// Usage
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee emp1 = new Employee("John Doe", 101, 50000);
+        emp1.display();
+        emp1.setSalary(55000);
+        emp1.display();
+    }
+}
+```
+
+2. Library Management System
+
+```java
+class Book {
+    private String title;
+    private String author;
+    private boolean isAvailable;
+
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+        this.isAvailable = true; // Default available
+    }
+
+    public void borrowBook() {
+        if (isAvailable) {
+            isAvailable = false;
+            System.out.println("Book borrowed: " + title);
+        } else {
+            System.out.println("Book is already borrowed.");
+        }
+    }
+
+    public void returnBook() {
+        isAvailable = true;
+        System.out.println("Book returned: " + title);
+    }
+
+    public void display() {
+        System.out.println("Title: " + title + ", Author: " + author + ", Available: " + isAvailable);
+    }
+}
+
+// Usage
+public class LibraryDemo {
+    public static void main(String[] args) {
+        Book book1 = new Book("Java Programming", "James Gosling");
+        book1.display();
+        book1.borrowBook();
+        book1.display();
+        book1.returnBook();
+        book1.display();
+    }
+}
+```
+
+3. Banking System
+
+```java
+class BankAccount {
+    private String accountHolder;
+    private double balance;
+
+    public BankAccount(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: $" + amount);
+        } else {
+            System.out.println("Insufficient funds.");
+        }
+    }
+
+    public void display() {
+        System.out.println("Account Holder: " + accountHolder + ", Balance: $" + balance);
+    }
+}
+
+// Usage
+public class BankingDemo {
+    public static void main(String[] args) {
+        BankAccount acc1 = new BankAccount("Alice", 10000);
+        acc1.display();
+        acc1.deposit(2000);
+        acc1.withdraw(500);
+        acc1.display();
+    }
+}
+```
+
+4. Online Shopping System
+
+```java
+class Product {
+    private String name;
+    private double price;
+    private int quantity;
+
+    public Product(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public void purchase(int qty) {
+        if (qty <= quantity) {
+            quantity -= qty;
+            System.out.println("Purchased " + qty + " " + name + "(s)");
+        } else {
+            System.out.println("Insufficient stock.");
+        }
+    }
+
+    public void display() {
+        System.out.println("Product: " + name + ", Price: $" + price + ", Stock: " + quantity);
+    }
+}
+
+// Usage
+public class ShoppingDemo {
+    public static void main(String[] args) {
+        Product p1 = new Product("Laptop", 1200, 10);
+        p1.display();
+        p1.purchase(3);
+        p1.display();
+    }
+}
+```
+
+
+5. Hotel Reservation System
+
+```java
+class Room {
+    private int roomNumber;
+    private boolean isBooked;
+
+    public Room(int roomNumber) {
+        this.roomNumber = roomNumber;
+        this.isBooked = false;
+    }
+
+    public void bookRoom() {
+        if (!isBooked) {
+            isBooked = true;
+            System.out.println("Room " + roomNumber + " booked.");
+        } else {
+            System.out.println("Room already booked.");
+        }
+    }
+
+    public void cancelBooking() {
+        isBooked = false;
+        System.out.println("Booking for room " + roomNumber + " canceled.");
+    }
+
+    public void display() {
+        System.out.println("Room " + roomNumber + ", Available: " + !isBooked);
+    }
+}
+
+// Usage
+public class HotelDemo {
+    public static void main(String[] args) {
+        Room r1 = new Room(101);
+        r1.display();
+        r1.bookRoom();
+        r1.display();
+        r1.cancelBooking();
+        r1.display();
+    }
+}
+```
+
+
