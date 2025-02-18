@@ -754,4 +754,56 @@ public class HotelDemo {
 }
 ```
 
+### 02. Static variables
+
+
+What are Static Variables?
+	
+- A static variable in Java is shared among all instances of a class.
+- It is declared using the static keyword inside a class but outside methods, constructors, or blocks.
+- Memory is allocated once when the class is loaded, rather than for each object.
+- Static variables belong to the class, not to individual objects.
+- They are often used for constants, counters, or shared resources.
+
+Key Features of Static Variables:
+
+- ✅ Belongs to the class rather than an instance.
+- ✅ Memory is allocated only once at class loading.
+- ✅ Accessible using ClassName.variableName.
+- ✅ Used for constants, shared resources, and counters.
+
+Syntax:
+
+```java
+class Example {
+    static int count = 0; // Static variable
+}
+```
+
+30 Examples of Static Variables
+
+1. Basic Example
+
+```java
+class Example {
+    static int count = 0;
+}
+```
+
+2. Counter Example
+
+```java
+
+class Counter {
+    static int count = 0;
+    
+    Counter() {
+        count++;
+    }
+
+    void display() {
+        System.out.println("Count: " + count);
+    }
+}
+``` 
 
