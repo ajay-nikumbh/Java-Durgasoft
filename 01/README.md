@@ -767,10 +767,11 @@ What are Static Variables?
 
 Key Features of Static Variables:
 
-- ✅ Belongs to the class rather than an instance.
-- ✅ Memory is allocated only once at class loading.
-- ✅ Accessible using ClassName.variableName.
-- ✅ Used for constants, shared resources, and counters.
+- Belongs to the class rather than an instance.
+- Memory is allocated only once at class loading.
+- Accessible using ClassName.variableName.
+- Used for constants, shared resources, and counters.
+
 
 Syntax:
 
