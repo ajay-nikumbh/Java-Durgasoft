@@ -341,5 +341,162 @@ public class InstanceVariableWithConstructor {
     }
 }
 ```
+Example 04:
 
+```java
+
+// Class 1: Person
+class Person {
+    private String name;
+    private int age;
+
+    // Constructor
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Setter methods
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAge(int age) {
+        if (age > 0) { // Ensuring a valid age
+            this.age = age;
+        } else {
+            System.out.println("Age must be positive.");
+        }
+    }
+
+    // Getter methods
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    void display() {
+        System.out.println("Name: " + getName() + ", Age: " + getAge());
+    }
+}
+
+// Class 2: Car
+class Car {
+    private String brand;
+    private String model;
+    private int year;
+
+    // Constructor
+    Car(String brand, String model, int year) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+    }
+
+    // Setters
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setYear(int year) {
+        if (year > 1885) { // Ensuring a valid car year
+            this.year = year;
+        } else {
+            System.out.println("Year must be greater than 1885.");
+        }
+    }
+
+    // Getters
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    void display() {
+        System.out.println("Car Brand: " + getBrand() + ", Model: " + getModel() + ", Year: " + getYear());
+    }
+}
+
+// Class 3: BankAccount
+class BankAccount {
+    private String accountHolder;
+    private double balance;
+
+    // Constructor
+    BankAccount(String accountHolder, double balance) {
+        this.accountHolder = accountHolder;
+        this.balance = balance;
+    }
+
+    // Setters
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            this.balance += amount;
+        } else {
+            System.out.println("Deposit amount must be positive.");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            this.balance -= amount;
+        } else {
+            System.out.println("Invalid withdrawal amount.");
+        }
+    }
+
+    // Getters
+    public String getAccountHolder() {
+        return accountHolder;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    void display() {
+        System.out.println("Account Holder: " + getAccountHolder() + ", Balance: $" + getBalance());
+    }
+}
+
+// Main Class
+public class InstanceVariableEncapsulation {
+    public static void main(String[] args) {
+
+        // Creating Person objects using the constructor
+        Person p1 = new Person("John Doe", 28);
+        p1.setAge(30); // Updating age using setter
+        p1.display();
+
+        // Creating Car objects using the constructor
+        Car c1 = new Car("Toyota", "Camry", 2022);
+        c1.setYear(2023); // Updating year using setter
+        c1.display();
+
+        // Creating BankAccount objects using the constructor
+        BankAccount acc1 = new BankAccount("Alice", 5000.75);
+        acc1.deposit(1000.25); // Depositing money
+        acc1.withdraw(1500.50); // Withdrawing money
+        acc1.display();
+    }
+}
+```
 
