@@ -1,4 +1,4 @@
-### 01. Instance variables:
+## 01. Instance variables:
 
 - Instance variables in Java are variables that belong to an instance of a class and are declared inside a class but outside any method, constructor, or block.
 - They have different values for different objects of the class.
@@ -754,7 +754,7 @@ public class HotelDemo {
 }
 ```
 
-### 02. Static variables
+## 02. Static variables
 
 
 What are Static Variables?
